@@ -12,16 +12,17 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.4
+    - python
     - pip
-    - setuptools_scm
+    - wheel
+    - setuptools
+    - setuptools_scm 7.1.0
   run:
-    - python >=3.4
+    - python
     - docutils >=0.3
     - pyparsing
 
@@ -34,10 +35,17 @@ test:
     - pip
 
 about:
-  home: http://github.com/willu47/amply
+  home: https://github.com/willu47/amply
   summary: Amply allows you to load and manipulate AMPL/GLPK data as Python data structures
+  description: | 
+    Amply allows you to load and manipulate AMPL/GLPK data as Python data structures.
+    Amply only supports a specific subset of the AMPL syntax: set declarations; set 
+    data statements; parameter declarations; parameter data statements
   license: EPL-2.0
   license_file: LICENSE
+  license_family: OTHER
+  doc_url: https://github.com/willu47/amply/blob/master/README.rst
+  dev_url: https://github.com/willu47/amply
 
 extra:
   recipe-maintainers:
