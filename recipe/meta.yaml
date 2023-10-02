@@ -11,7 +11,7 @@ source:
   sha256: 61421103ccf8e1066717115fe7917610d831d551c68d31a110876a5b6c78aea4
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -20,7 +20,7 @@ requirements:
     - pip
     - wheel
     - setuptools
-    - setuptools_scm 7.1.0
+    - setuptools_scm
   run:
     - python
     - docutils >=0.3
